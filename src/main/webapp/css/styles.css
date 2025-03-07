@@ -1,0 +1,88 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 10px;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+/* Form styling */
+form {
+    width: 250px;
+    background: #f9f9f9;
+    padding: 0px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 8px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Table styling */
+table {
+    width: 40%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 4px;
+    text-align: left;
+    font-size: 14px;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+table input[name="localities"] {
+    border: none; 
+    background-color: transparent;
+    width: 100%; 
+    font-size: inherit;
+    font-family: inherit; 
+    padding: 0;
+    margin: 0;
+    vertical-align: middle; 
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    background: #007bff;
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+a:hover {
+    background: #0056b3;
+}
+.delete {
+    background: #dc3545;
+}
+.delete:hover {
+    background: #c82333;
+}
