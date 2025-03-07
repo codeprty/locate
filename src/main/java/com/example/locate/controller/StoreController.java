@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-// Marks this class as a Spring MVC Controller and sets the base request mapping to "/stores".
+// Marks this class as a Spring MVC Controller with a base request mapping of "/stores".
 @Controller
 @RequestMapping("/stores")
 public class StoreController {
@@ -17,21 +17,21 @@ public class StoreController {
         this.storeService = storeService;
     }
 
-    // Handles GET request to "/stores", retrieves all stores, and displays them in "store-list" view.
+    // Handles GET "/stores", fetches all stores, and shows them in "store-list" view.
     @GetMapping
     public String listStores(Model model) {
         model.addAttribute("stores", storeService.getAllStores());
         return "store-list";
     }
 
-    // Handles GET request to "/stores/add", initializes an empty Store object, and loads "store-form" view for adding a new store.
+    // Handles GET "/stores/add", initializes an empty Store, and loads "store-form" view.
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("store", new Store());
         return "store-form";
     }
 
-    // Handles GET request to "/stores/edit/{id}", retrieves a store by ID, and loads "store-form" view for editing.
+    // Handles GET "/stores/edit/{id}", fetches store by ID, and loads "store-form" view.
     @GetMapping("/edit/{id}")
     public String showEditForm(@PathVariable Long id, Model model) {
         Store store = storeService.getStoreById(id);
@@ -39,14 +39,14 @@ public class StoreController {
         return "store-form";
     }
 
-    // Handles POST request to "/stores/save", saves or updates a store, then redirects back to the store list.
+    // Handles POST "/stores/save", saves or updates a store, then redirects to the store list.
     @PostMapping("/save")
     public String saveStore(@ModelAttribute Store store) {
         storeService.addStore(store);
         return "redirect:/stores";
     }
 
-    // Handles GET request to "/stores/delete/{id}", deletes a store by ID, and redirects back to the store list.
+    // Handles GET "/stores/delete/{id}", deletes store by ID, then redirects to store list.
     @GetMapping("/delete/{id}")
     public String deleteStore(@PathVariable Long id) {
         storeService.deleteStore(id);
