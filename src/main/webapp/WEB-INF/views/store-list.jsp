@@ -3,10 +3,11 @@
 <html>
 <head>
     <title>Store List</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
     <h2>All Grocery Stores</h2>
-    <table border="1">
+    <table>
         <tr>
             <th>Name</th>
             <th>Phone Number</th>
@@ -17,16 +18,15 @@
             <tr>
                 <td>${store.name}</td>
                 <td>${store.phoneNumber}</td>
-                <td><input type="text" name="localities" value="${store.localities}"></td>
-
+                <td><input type="text" name="localities" value="${store.localities}" readonly></td>
                 <td>
-                    <a href="/stores/edit/${store.id}">Edit</a> | 
-                    <a href="/stores/delete/${store.id}" onclick="return confirm('Are you sure?')">Delete</a>
+                    <a href="/stores/edit/${store.id}">Edit</a>
+                    <a href="/stores/delete/${store.id}" class="delete" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
         </c:forEach>
     </table>
     <br>
-    <a href="/stores/add">Add Store</a>
+    <a href="/stores">Back to List</a> | <a href="/stores/add">Add Store</a>
 </body>
 </html>

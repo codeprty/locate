@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Add/Edit Store</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
     <h2>${store.id == null ? "Add Store" : "Edit Store"}</h2>
@@ -9,13 +10,13 @@
         <input type="hidden" name="id" value="${store.id}">
         <label>Name:</label>
         <input type="text" name="name" value="${store.name}" required>
-        <br>
+        
         <label>Phone Number:</label>
         <input type="text" name="phoneNumber" value="${store.phoneNumber}" required>
-        <br>
+        
         <label>Localities:</label>
         <input type="text" name="localities" value="${store.localities}" required>
-        <br>
+        
         <button type="submit">Save</button>
     </form>
     <br>
